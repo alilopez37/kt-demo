@@ -5,10 +5,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.secrets.gradle)
 }
 
 android {
     namespace = "com.alilopez.demo"
+
     compileSdk {
         version = release(36)
     }
@@ -45,6 +47,28 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+
+    secrets {
+        propertiesFileName = "local.properties"
+        defaultPropertiesFileName = "local.defaults.properties"
+        ignoreList.add("sdk.dir")
+    }
+
+    flavorDimensions.add("environment")
+    productFlavors {
+        create("dev") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_URL", "\"https://rickandmortyapi.com/api/\"")
+            resValue("string", "app_name", "Rick&Morty (DEV)")
+        }
+
+        create("prod") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_URL", "\"https://rickandmortyapi.com/api\"")
+            resValue("string", "app_name", "Rick&Morty Pro")
+        }
     }
 }
 
