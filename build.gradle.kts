@@ -4,4 +4,5 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.secrets.gradle) apply false // Secrets Gradle
+    alias(libs.plugins.jetbrainsKotlinSerialization) apply false  //Serialization
 }

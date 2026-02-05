@@ -7,15 +7,17 @@ junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.10.0"
-activityCompose = "1.12.2"
-composeBom = "2026.01.00"
-uiTextGoogleFonts = "1.10.1"
+activityCompose = "1.12.3"
+composeBom = "2026.01.01"
+uiTextGoogleFonts = "1.10.2"
 material3 = "1.4.0"
 lifecycleViewmodelCompose = "2.10.0"
 retrofit = "3.0.0"
 converterGson = "3.0.0"
 ioCoilVersion = "2.7.0"
-ui = "1.10.1"
+ui = "1.10.2"
+navigationCompose = "2.9.7"
+iconsExtended = "1.7.8"
 
 
 [libraries]
@@ -40,12 +42,13 @@ io-coil-kt-coil-compose = { group = "io.coil-kt", name = "coil-compose", version
 com-squareup-retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
 com-squareup-retrofit2-converter-json = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson"}
 androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
-
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref="iconsExtended"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 secrets-gradle = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradle" }
-
+jetbrainsKotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 

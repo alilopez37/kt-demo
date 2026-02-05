@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.secrets.gradle)
+    alias(libs.plugins.jetbrainsKotlinSerialization)
 }
 
 android {
@@ -60,13 +61,15 @@ android {
     productFlavors {
         create("dev") {
             dimension = "environment"
-            buildConfigField("String", "BASE_URL", "\"https://rickandmortyapi.com/api/\"")
+            buildConfigField("String", "BASE_URL_RICK", "\"https://rickandmortyapi.com/api/\"")
+            buildConfigField("String", "BASE_URL_JSON", "\"https://jsonplaceholder.typicode.com/\"")
             resValue("string", "app_name", "Rick&Morty (DEV)")
         }
 
         create("prod") {
             dimension = "environment"
-            buildConfigField("String", "BASE_URL", "\"https://rickandmortyapi.com/api\"")
+            buildConfigField("String", "BASE_URL_RICK", "\"https://rickandmortyapi.com/api\"")
+            buildConfigField("String", "BASE_URL_JSON", "\"https://jsonplaceholder.typicode.com/\"")
             resValue("string", "app_name", "Rick&Morty Pro")
         }
     }
@@ -87,7 +90,9 @@ dependencies {
     implementation(libs.com.squareup.retrofit2.retrofit)        // Retrofit
     implementation(libs.com.squareup.retrofit2.converter.json)  // JSON
     implementation(libs.io.coil.kt.coil.compose)
-    implementation(libs.androidx.ui)                // IO
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.navigation.compose)                // IO
+    implementation(libs.androidx.compose.material.icons.extended)   // Icons
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

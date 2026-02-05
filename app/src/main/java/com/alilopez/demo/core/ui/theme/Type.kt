@@ -22,7 +22,7 @@ val bodyFontFamily = FontFamily(
 
 val displayFontFamily = FontFamily(
     Font(
-        googleFont = GoogleFont("Lato"),
+        googleFont = GoogleFont("Allerta Stencil"),
         fontProvider = provider,
     )
 )
