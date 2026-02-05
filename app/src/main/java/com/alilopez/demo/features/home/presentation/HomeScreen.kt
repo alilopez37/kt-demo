@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -51,7 +52,8 @@ fun HomeScreen(
                 color = MaterialTheme.colorScheme.primaryContainer,
                 shape = RoundedCornerShape(16.dp),
                 shadowElevation = 8.dp,
-                modifier = Modifier.size(150.dp)
+                modifier = Modifier.weight(1f)
+                    .height(200.dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.rickandmorty),
@@ -68,7 +70,8 @@ fun HomeScreen(
                 color = MaterialTheme.colorScheme.primaryContainer,
                 shape = RoundedCornerShape(16.dp),
                 shadowElevation = 8.dp,
-                modifier = Modifier.size(150.dp)
+                modifier = Modifier.weight(1f)
+                    .height(200.dp)
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.json),
